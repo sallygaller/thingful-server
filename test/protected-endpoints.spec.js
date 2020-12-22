@@ -28,7 +28,7 @@ describe("Things Endpoints", function () {
 
   afterEach("cleanup", () => helpers.cleanTables(db));
 
-  beforeEach("insert articles", () =>
+  beforeEach("insert reviews", () =>
     helpers.seedThingsTables(db, testUsers, testThings, testReviews)
   );
 
