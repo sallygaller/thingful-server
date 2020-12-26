@@ -260,7 +260,7 @@ function seedThingsTables(db, users, things, reviews = []) {
     await trx.raw(`SELECT setval('thingful_things_id_seq', ?)`, [
       things[things.length - 1].id,
     ]);
-    // only insert comments if there are some, also update the sequence counter
+    // only insert reviews if there are some, also update the sequence counter
     if (reviews.length) {
       await trx.into("thingful_reviews").insert(reviews);
       await trx.raw(`SELECT setval('thingful_reviews_id_seq', ?)`, [
